@@ -1,0 +1,10 @@
+github.com/gorilla/handlers v1.4.2 h1:0QniY0USkHQ1RGCLfKxeNHK9bkDHGRYGNDFBCS+YARg=
+github.com/gorilla/handlers v1.4.2/go.mod h1:Qkdc/uu4tH4g6mTK6auzZ766c4CA0Ng8+o/OAirnOIQ=
+github.com/gorilla/mux v1.7.4 h1:VuZ8uybHlWmqV03+zRzdwKL4tUnIp1MAQtp1mIFE1bc=
+github.com/gorilla/mux v1.7.4/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/mazzegi/log v0.0.0-20200601101706-01eae2241ec0 h1:ZKp/KWeHGhBP2wkRc+5FHABNG5P1BvjKRwXPf3fhUW4=
+github.com/mazzegi/log v0.0.0-20200601101706-01eae2241ec0/go.mod h1:7OU3AW6kncZPf8f3oJ3H+g0sxeT1R7MYUOrvBAW/P68=
+github.com/mazzegi/uuidv4 v1.0.1 h1:AUJjRGIZoFR5FrolKUtpO0moxXzEMlCFD4PO/ySGrcU=
+github.com/mazzegi/uuidv4 v1.0.1/go.mod h1:iJhHQdHBiB4lbJeMI9aRu7aKEfRAgj5xj2OUXMDP84U=
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
