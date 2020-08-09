@@ -102,7 +102,7 @@ func (e *Environment) ServeFiles(prefix string, dir string) {
 }
 
 //Static Handler
-func (e *Environment) handleNotAuthorized(ctx Context, w http.ResponseWriter, r *http.Request) {
+func (e *Environment) HandleNotAuthorized(ctx Context, w http.ResponseWriter, r *http.Request) {
 	if e.notAuthorizedHandler != nil {
 		e.notAuthorizedHandler(ctx, w, r)
 	} else {
@@ -110,7 +110,7 @@ func (e *Environment) handleNotAuthorized(ctx Context, w http.ResponseWriter, r 
 	}
 }
 
-func (e *Environment) handleForbidden(ctx Context, w http.ResponseWriter, r *http.Request) {
+func (e *Environment) HandleForbidden(ctx Context, w http.ResponseWriter, r *http.Request) {
 	if e.forbiddenHandler != nil {
 		e.forbiddenHandler(ctx, w, r)
 	} else {
@@ -138,7 +138,7 @@ func (e *Environment) HandleGETAuthorized(pattern string, handle HandleFunc) {
 	e.router.HandleFunc(pattern, func(w http.ResponseWriter, r *http.Request) {
 		session := e.ensureSession(w, r)
 		if !e.noAuth && !session.IsAuthorized() {
-			e.handleNotAuthorized(newContext(session), w, r)
+			e.HandleNotAuthorized(newContext(session), w, r)
 			return
 		}
 		handle(newContext(session), w, r)
@@ -149,7 +149,7 @@ func (e *Environment) HandlePOSTAuthorized(pattern string, handle HandleFunc) {
 	e.router.HandleFunc(pattern, func(w http.ResponseWriter, r *http.Request) {
 		session := e.ensureSession(w, r)
 		if !e.noAuth && !session.IsAuthorized() {
-			e.handleNotAuthorized(newContext(session), w, r)
+			e.HandleNotAuthorized(newContext(session), w, r)
 			return
 		}
 		handle(newContext(session), w, r)
