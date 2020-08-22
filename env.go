@@ -155,3 +155,14 @@ func (e *Environment) HandlePOSTAuthorized(pattern string, handle HandleFunc) {
 		handle(newContext(session), w, r)
 	}).Methods("POST", "OPTIONS")
 }
+
+func (e *Environment) HandleDELETEAuthorized(pattern string, handle HandleFunc) {
+	e.router.HandleFunc(pattern, func(w http.ResponseWriter, r *http.Request) {
+		session := e.ensureSession(w, r)
+		if !e.noAuth && !session.IsAuthorized() {
+			e.HandleNotAuthorized(newContext(session), w, r)
+			return
+		}
+		handle(newContext(session), w, r)
+	}).Methods("DELETE", "OPTIONS")
+}
