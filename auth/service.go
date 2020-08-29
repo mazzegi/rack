@@ -21,8 +21,8 @@ func NewService(svc *rack.Service, r Repository) *Service {
 }
 
 func (s *Service) Activate() {
-	s.HandlePOST(s.Resolve("/login"), s.handlePOSTLogin)
-	s.HandlePOSTAuthorized(s.Resolve("/logout"), s.handlePOSTLogout)
+	s.HandlePOST(s.Resolve("login"), s.handlePOSTLogin)
+	s.HandlePOSTAuthorized(s.Resolve("logout"), s.handlePOSTLogout)
 }
 
 func (s *Service) Deactivate() {

@@ -1,8 +1,8 @@
 package auth
 
-type MockRepositoty struct {
+type MockRepository struct {
 }
 
-func (r MockRepositoty) IsValidUserNameAndPassword(user, pwd string) bool {
+func (r MockRepository) IsValidUserNameAndPassword(user, pwd string) bool {
 	return true
 }
